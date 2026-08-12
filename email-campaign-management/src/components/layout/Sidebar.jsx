@@ -1,31 +1,49 @@
 import React from 'react'
+import { NavLink } from "react-router-dom";
 
 export default function Sidebar() {
   return (
     <div>
       <aside>
+
       <h2>Email Platform</h2>
 
       <nav>
-        <p>Dashboard</p>
+
+        <NavLink to="/dashboard">
+          Dashboard
+        </NavLink>
 
         <h4>CAMPAIGNS</h4>
-        <p>Campaign Library</p>
-        <p>Create Campaign</p>
+
+        <NavLink to="/campaigns">
+          Campaign Library
+        </NavLink>
+
+        <NavLink to="/campaigns/create">
+          Create Campaign
+        </NavLink>
 
         <h4>AUDIENCE</h4>
-        <p>Distribution Lists</p>
-        <p>Target Domains</p>
-        <p>Regions</p>
+
+        <NavLink to="/audience">
+          Audience Management
+        </NavLink>
 
         <h4>TRAINING</h4>
-        <p>Courses</p>
-        <p>Assignments</p>
+
+        <NavLink to="/training">
+          Courses
+        </NavLink>
 
         <h4>ANALYTICS</h4>
-        <p>Campaign Analytics</p>
-        <p>Reports</p>
+
+        <NavLink to="/analytics">
+          Campaign Analytics
+        </NavLink>
+
       </nav>
+
     </aside>
     </div>
   )

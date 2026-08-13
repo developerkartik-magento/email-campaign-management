@@ -3,48 +3,110 @@ import { NavLink } from "react-router-dom";
 
 export default function Sidebar() {
   return (
-    <div>
-      <aside>
+    <aside className="sidebar">
 
-      <h2>Email Platform</h2>
+      <div className="sidebar-logo">
+        <div className="logo-icon">
+          EC
+        </div>
 
-      <nav>
+        <div>
+          <h2>Email Campaign</h2>
+          <span>Management Platform</span>
+        </div>
+      </div>
 
-        <NavLink to="/dashboard">
+      <nav className="sidebar-nav">
+
+        <NavLink
+          to="/dashboard"
+          className={({ isActive }) =>
+            isActive ? "nav-link active" : "nav-link"
+          }
+        >
+          <span>▣</span>
           Dashboard
         </NavLink>
 
-        <h4>CAMPAIGNS</h4>
+        <div className="nav-section-title">
+          CAMPAIGNS
+        </div>
 
-        <NavLink to="/campaigns">
+        <NavLink
+          to="/campaigns"
+          className={({ isActive }) =>
+            isActive ? "nav-link active" : "nav-link"
+          }
+        >
+          <span>✉</span>
           Campaign Library
         </NavLink>
 
-        <NavLink to="/campaigns/create">
+        <NavLink
+          to="/campaigns/create"
+          className={({ isActive }) =>
+            isActive ? "nav-link active" : "nav-link"
+          }
+        >
+          <span>＋</span>
           Create Campaign
         </NavLink>
 
-        <h4>AUDIENCE</h4>
+        <div className="nav-section-title">
+          AUDIENCE
+        </div>
 
-        <NavLink to="/audience">
+        <NavLink
+          to="/audience"
+          className={({ isActive }) =>
+            isActive ? "nav-link active" : "nav-link"
+          }
+        >
+          <span>♟</span>
           Audience Management
         </NavLink>
 
-        <h4>TRAINING</h4>
+        <div className="nav-section-title">
+          TRAINING
+        </div>
 
-        <NavLink to="/training">
+        <NavLink
+          to="/training"
+          className={({ isActive }) =>
+            isActive ? "nav-link active" : "nav-link"
+          }
+        >
+          <span>▤</span>
           Courses
         </NavLink>
 
-        <h4>ANALYTICS</h4>
+        <div className="nav-section-title">
+          ANALYTICS
+        </div>
 
-        <NavLink to="/analytics">
+        <NavLink
+          to="/analytics"
+          className={({ isActive }) =>
+            isActive ? "nav-link active" : "nav-link"
+          }
+        >
+          <span>▥</span>
           Campaign Analytics
         </NavLink>
 
       </nav>
 
+      <div className="sidebar-footer">
+        <div className="user-avatar">
+          A
+        </div>
+
+        <div>
+          <strong>Admin User</strong>
+          <small>Administrator</small>
+        </div>
+      </div>
+
     </aside>
-    </div>
   )
 }

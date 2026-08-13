@@ -1,31 +1,31 @@
 import React from 'react'
+import CampaignOverview from "./components/CampaignOverview";
+import RecentCampaigns from "./components/RecentCampaigns";
+import QuickActions from "./components/QuickActions";
 
 export default function Dashboard() {
   return (
-    <div>
-      <h1>Dashboard</h1>
+    <div className="dashboard">
 
-      <p>Welcome to the Email Campaign Management Platform.</p>
+      <div className="dashboard-header">
 
-      <div>
-        <h3>Total Campaigns</h3>
-        <p>125</p>
+        <div>
+          <h1>Dashboard</h1>
+
+          <p>
+            Welcome back! Here's what's happening
+            with your campaigns.
+          </p>
+        </div>
+
       </div>
 
-      <div>
-        <h3>Emails Sent</h3>
-        <p>45,823</p>
-      </div>
+      <CampaignOverview />
 
-      <div>
-        <h3>Open Rate</h3>
-        <p>70.8%</p>
-      </div>
+      <RecentCampaigns />
 
-      <div>
-        <h3>Click Rate</h3>
-        <p>19.5%</p>
-      </div>
+      <QuickActions />
+
     </div>
   )
 }

@@ -2,15 +2,37 @@ import React from 'react'
 
 export default function Header() {
   return (
-    <div>
-      <header>
-      <h3>Email Campaign Management Platform</h3>
+    <header className="header">
 
       <div>
-        <span>Notifications</span>
-        <span>Admin</span>
+        <h3>Internal Communication Platform</h3>
+        <p>Manage campaigns, training and analytics</p>
       </div>
+
+      <div className="header-actions">
+
+        <button className="notification-button">
+          🔔
+          <span className="notification-dot"></span>
+        </button>
+
+        <div className="header-user">
+
+          <div className="header-avatar">
+            A
+          </div>
+
+          <div>
+            <strong>Admin User</strong>
+            <small>Administrator</small>
+          </div>
+
+          <span>▼</span>
+
+        </div>
+
+      </div>
+
     </header>
-    </div>
   )
 }

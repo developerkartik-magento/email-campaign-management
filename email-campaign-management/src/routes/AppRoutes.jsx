@@ -5,7 +5,7 @@ import Layout from "../components/layout/Layout";
 
 import Login from "../pages/Login/Login";
 import Dashboard from "../pages/Dashboard/Dashboard";
-
+import CampaignBuilder from "../pages/Campaigns/CampaignBuilder";
 import CampaignList from "../pages/Campaigns/CampaignList";
 import CreateCampaign from "../pages/Campaigns/CreateCampaign";
 import CampaignDetails from "../pages/Campaigns/CampaignDetails";
@@ -31,6 +31,16 @@ export default function AppRoutes() {
 
         {/* Campaigns */}
         <Route path="/campaigns" element={<CampaignList />} />
+        
+        <Route
+    path="/campaigns/create"
+    element={<CampaignBuilder />}
+  /> 
+
+        <Route
+          path="/campaigns/:id"
+          element={<CampaignDetails />}
+        />
         <Route path="/campaigns/create" element={<CreateCampaign />} />
         <Route path="/campaigns/:id" element={<CampaignDetails />} />
 

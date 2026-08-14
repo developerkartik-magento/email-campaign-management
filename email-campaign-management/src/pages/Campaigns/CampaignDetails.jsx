@@ -16,20 +16,26 @@ export default function CampaignDetails() {
 
   if (!campaign) {
     return (
-      <div className="not-found">
+      <div className="campaign-page">
 
-        <h1>Campaign Not Found</h1>
+        <div className="page-header">
 
-        <p>
-          The campaign you are looking for does not exist.
-        </p>
+          <div>
+            <h1>Campaign Not Found</h1>
 
-        <Link
-          to="/campaigns"
-          className="primary-button"
-        >
-          Back to Campaigns
-        </Link>
+            <p>
+              The campaign you are looking for does not exist.
+            </p>
+          </div>
+
+          <Link
+            to="/campaigns"
+            className="secondary-button"
+          >
+            ← Back to Campaigns
+          </Link>
+
+        </div>
 
       </div>
     );

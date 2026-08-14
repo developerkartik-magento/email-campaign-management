@@ -6,6 +6,7 @@ import { campaigns } from "../../data/campaigns";
 
 import CampaignFilters from "./components/CampaignFilters";
 import CampaignTable from "./components/CampaignTable";
+import campaignData from "../../data/campaignData";
 
 
 

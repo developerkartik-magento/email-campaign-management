@@ -10,8 +10,8 @@ import CampaignList from "../pages/Campaigns/CampaignList";
 import CreateCampaign from "../pages/Campaigns/CreateCampaign";
 import CampaignDetails from "../pages/Campaigns/CampaignDetails";
 
-import Audience from "../pages/Audience/Audience";
-
+import Audience from "../pages/Audience/AudienceList";
+import TrainingList from "../pages/Training/TrainingList";
 import Courses from "../pages/Training/Courses";
 import CourseDetails from "../pages/Training/CourseDetails";
 
@@ -47,6 +47,10 @@ export default function AppRoutes() {
         {/* Audience */}
         <Route path="/audience" element={<Audience />} />
 
+        <Route
+  path="/training"
+  element={<TrainingList />}
+/>
         {/* Training */}
         <Route path="/training" element={<Courses />} />
         <Route path="/training/:id" element={<CourseDetails />} />

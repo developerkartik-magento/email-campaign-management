@@ -1,4 +1,5 @@
 import React from 'react'
+import EmailEditor from "./EmailEditor";
 
 export default function CampaignContent({
   campaignData,
@@ -94,19 +95,21 @@ export default function CampaignContent({
 
           <div className="form-group">
 
-            <label>
-              Email Message
-            </label>
+        <label>
+            Email Body
+        </label>
 
-            <textarea
-              name="message"
-              value={campaignData.message}
-              onChange={handleChange}
-              placeholder="Write your email content..."
-              rows="6"
-            />
+        <EmailEditor
+            value={campaignData.message}
+            onChange={(value) =>
+            setCampaignData((previousData) => ({
+                ...previousData,
+                message: value,
+            }))
+            }
+        />
 
-          </div>
+        </div>
 
           <div className="form-row">
 
@@ -220,10 +223,14 @@ function EmailLivePreview({ campaignData }) {
                 "Your email heading"}
             </h2>
 
-            <p>
-              {campaignData.message ||
-                "Your email message will appear here."}
-            </p>
+            <div
+  className="email-preview-content"
+  dangerouslySetInnerHTML={{
+    __html:
+      campaignData.message ||
+      "<p>Your email message will appear here.</p>",
+  }}
+/>
 
             <a
               href={campaignData.buttonLink || "#"}

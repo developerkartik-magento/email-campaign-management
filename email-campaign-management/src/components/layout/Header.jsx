@@ -14,7 +14,7 @@ export default function Header() {
         <ThemeToggle />
         <button className="notification-button">
           🔔
-          <span className="notification-dot"></span>
+          <span className="notification-dot">5</span>
         </button>
 
         <div className="header-user">

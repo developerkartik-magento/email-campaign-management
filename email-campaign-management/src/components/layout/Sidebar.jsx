@@ -5,7 +5,9 @@ export default function Sidebar() {
   return (
     <aside className="sidebar">
 
-      <div className="sidebar-logo">
+      <NavLink
+          to="/dashboard">
+        <div className="sidebar-logo">
         <div className="logo-icon">
           EC
         </div>
@@ -15,6 +17,7 @@ export default function Sidebar() {
           <span>Management Platform</span>
         </div>
       </div>
+      </NavLink>
 
       <nav className="sidebar-nav">
 

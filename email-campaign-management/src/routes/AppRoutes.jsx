@@ -16,6 +16,7 @@ import Courses from "../pages/Training/Courses";
 import CourseDetails from "../pages/Training/CourseDetails";
 
 import Analytics from "../pages/Analytices/Analytics";
+import AnalyticsDashboard from "../pages/Analytices/AnalyticsDashboard";
 
 export default function AppRoutes() {
   return (
@@ -56,7 +57,7 @@ export default function AppRoutes() {
         <Route path="/training/:id" element={<CourseDetails />} />
 
         {/* Analytics */}
-        <Route path="/analytics" element={<Analytics />} />
+        <Route path="/analytics" element={<AnalyticsDashboard />} />
 
       </Route>
 

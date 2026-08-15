@@ -1,4 +1,5 @@
 import React from 'react'
+import ThemeToggle from "../ThemeToggle";
 
 export default function Header() {
   return (
@@ -10,7 +11,7 @@ export default function Header() {
       </div>
 
       <div className="header-actions">
-
+        <ThemeToggle />
         <button className="notification-button">
           🔔
           <span className="notification-dot"></span>

@@ -14,6 +14,22 @@ export default function CampaignContent({
       [name]: value,
     }));
   };
+
+  const handleBannerUpload = (event) => {
+  const file = event.target.files[0];
+
+  if (!file) {
+    return;
+  }
+
+  const imageUrl = URL.createObjectURL(file);
+
+  setCampaignData((previousData) => ({
+    ...previousData,
+    banner: imageUrl,
+  }));
+};
+
   return (
     <div className="builder-content">
 
@@ -76,7 +92,83 @@ export default function CampaignContent({
             />
 
           </div>
+        <label>
+    Email Banner
+  </label>
 
+  <div className="banner-upload">
+
+    {campaignData.banner ? (
+
+      <div className="banner-preview">
+
+        <img
+          src={campaignData.banner}
+          alt="Email banner preview"
+        />
+
+        <div className="banner-actions">
+
+          <label
+            htmlFor="banner-upload"
+            className="secondary-button"
+          >
+            Change Image
+          </label>
+
+          <button
+            type="button"
+            className="danger-button"
+            onClick={() =>
+              setCampaignData((previousData) => ({
+                ...previousData,
+                banner: "",
+              }))
+            }
+          >
+            Remove
+          </button>
+
+        </div>
+
+      </div>
+
+    ) : (
+
+      <label
+        htmlFor="banner-upload"
+        className="banner-upload-box"
+      >
+
+        <div className="upload-icon">
+          📷
+        </div>
+
+        <strong>
+          Upload Email Banner
+        </strong>
+
+        <span>
+          PNG, JPG or JPEG
+        </span>
+
+        <span>
+          Click to browse
+        </span>
+
+      </label>
+
+    )}
+
+    <input
+      id="banner-upload"
+      type="file"
+      accept="image/png,image/jpeg,image/jpg"
+      onChange={handleBannerUpload}
+      hidden
+    />
+
+  </div>
           <div className="form-group">
 
             <label>
@@ -214,9 +306,13 @@ function EmailLivePreview({ campaignData }) {
 
           <div className="email-live-body">
 
-            <div className="email-live-image">
-              Email Image
-            </div>
+            {campaignData.banner && (
+  <img
+    src={campaignData.banner}
+    alt="Email banner"
+    className="email-banner-preview"
+  />
+)}
 
             <h2>
               {campaignData.heading ||

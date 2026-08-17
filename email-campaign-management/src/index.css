@@ -2514,3 +2514,86 @@ tbody tr:hover {
   }
 
 }
+.banner-upload {
+  width: 100%;
+}
+.banner-upload-box {
+  min-height: 180px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 30px;
+
+  box-sizing: border-box;
+
+  border: 2px dashed var(--border-color);
+
+  border-radius: 10px;
+
+  background: var(--page-bg);
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+.banner-upload-box:hover {
+  border-color: var(--primary-color);
+
+  background: rgba(37, 99, 235, 0.04);
+}
+.upload-icon {
+  font-size: 32px;
+
+  margin-bottom: 5px;
+}
+.banner-upload-box strong {
+  color: var(--text-primary);
+
+  font-size: 14px;
+}
+
+.banner-upload-box span {
+  color: var(--text-secondary);
+
+  font-size: 12px;
+}
+.banner-preview {
+  width: 100%;
+}
+
+.banner-preview img {
+  display: block;
+
+  width: 100%;
+
+  max-height: 280px;
+
+  object-fit: cover;
+
+  border-radius: 8px;
+
+  border: 1px solid var(--border-color);
+}
+
+.banner-actions {
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 12px;
+}
+.email-banner-preview {
+  width: 100%;
+
+  max-height: 300px;
+
+  object-fit: cover;
+
+  display: block;
+}

@@ -17,10 +17,20 @@ import CourseDetails from "../pages/Training/CourseDetails";
 
 import Analytics from "../pages/Analytices/Analytics";
 import AnalyticsDashboard from "../pages/Analytices/AnalyticsDashboard";
+import ProtectedRoute from "../components/ProtectedRoute";
 
 export default function AppRoutes() {
   return (
     <Routes>
+      <Route
+  path="/"
+  element={
+    <Navigate
+      to="/login"
+      replace
+    />
+  }
+/>
 
       {/* Login */}
       <Route path="/login" element={<Login />} />
@@ -28,36 +38,49 @@ export default function AppRoutes() {
       {/* Main Application */}
       <Route element={<Layout />}>
 
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route
+  path="/dashboard"
+  element={
+    <ProtectedRoute>
+      <Dashboard />
+    </ProtectedRoute>
+  }
+/>
 
         {/* Campaigns */}
-        <Route path="/campaigns" element={<CampaignList />} />
+        <Route 
+        path="/campaigns" 
+        element={
+        <ProtectedRoute>
+          <CampaignList />
+        </ProtectedRoute>
+        } />
         
         <Route
     path="/campaigns/create"
-    element={<CampaignBuilder />}
+    element={<ProtectedRoute><CampaignBuilder /></ProtectedRoute>}
   /> 
 
         <Route
           path="/campaigns/:id"
-          element={<CampaignDetails />}
+          element={<ProtectedRoute><CampaignDetails /></ProtectedRoute>}
         />
-        <Route path="/campaigns/create" element={<CreateCampaign />} />
-        <Route path="/campaigns/:id" element={<CampaignDetails />} />
+        <Route path="/campaigns/create" element={<ProtectedRoute><CreateCampaign /></ProtectedRoute>} />
+        <Route path="/campaigns/:id" element={<ProtectedRoute><CampaignDetails /></ProtectedRoute>} />
 
         {/* Audience */}
-        <Route path="/audience" element={<Audience />} />
+        <Route path="/audience" element={<ProtectedRoute><Audience /></ProtectedRoute>} />
 
         <Route
   path="/training"
-  element={<TrainingList />}
+  element={<ProtectedRoute><TrainingList /></ProtectedRoute>}
 />
         {/* Training */}
-        <Route path="/training" element={<Courses />} />
-        <Route path="/training/:id" element={<CourseDetails />} />
+        <Route path="/training" element={<ProtectedRoute><Courses /></ProtectedRoute>} />
+        <Route path="/training/:id" element={<ProtectedRoute><CourseDetails /></ProtectedRoute>} />
 
         {/* Analytics */}
-        <Route path="/analytics" element={<AnalyticsDashboard />} />
+        <Route path="/analytics" element={<ProtectedRoute><AnalyticsDashboard /></ProtectedRoute>} />
 
       </Route>
 

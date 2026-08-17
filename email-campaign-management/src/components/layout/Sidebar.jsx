@@ -23,6 +23,7 @@ export default function Sidebar() {
 
         <NavLink
           to="/dashboard"
+          end
           className={({ isActive }) =>
             isActive ? "nav-link active" : "nav-link"
           }
@@ -37,6 +38,7 @@ export default function Sidebar() {
 
         <NavLink
           to="/campaigns"
+          end
           className={({ isActive }) =>
             isActive ? "nav-link active" : "nav-link"
           }
@@ -47,6 +49,7 @@ export default function Sidebar() {
 
         <NavLink
           to="/campaigns/create"
+          end
           className={({ isActive }) =>
             isActive ? "nav-link active" : "nav-link"
           }
@@ -61,6 +64,7 @@ export default function Sidebar() {
 
         <NavLink
           to="/audience"
+          end
           className={({ isActive }) =>
             isActive ? "nav-link active" : "nav-link"
           }
@@ -75,6 +79,7 @@ export default function Sidebar() {
 
         <NavLink
           to="/training"
+          end
           className={({ isActive }) =>
             isActive ? "nav-link active" : "nav-link"
           }
@@ -89,6 +94,7 @@ export default function Sidebar() {
 
         <NavLink
           to="/analytics"
+          end
           className={({ isActive }) =>
             isActive ? "nav-link active" : "nav-link"
           }

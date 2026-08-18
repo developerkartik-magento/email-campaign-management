@@ -18,8 +18,13 @@ export default function Dashboard() {
             with your campaigns.
           </p>
         </div>
-
+        <div className="dashboard-date">
+          <span>Last updated</span>
+          <strong>Today, 10:30 AM</strong>
+        </div>
       </div>
+      
+
       <section className="dashboard-section">
 
         <div className="section-header">
